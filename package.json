@@ -21,6 +21,8 @@
     "test:e2e": "playwright test tests/e2e",
     "test:api": "playwright test tests/api",
     "test:visual": "playwright test tests/visual",
+    "test:visual:update": "playwright test tests/visual --update-snapshots",
+    "test:visual:docker": "docker run --rm -it -v ${PWD}:/work -w /work mcr.microsoft.com/playwright:v1.59.1-noble /bin/bash -lc \"npm ci && npx playwright test tests/visual\"",
     "test:a11y": "playwright test tests/a11y",
     "test:reliability": "playwright test --repeat-each=2",
     "test:shard:1": "playwright test --shard=1/2",

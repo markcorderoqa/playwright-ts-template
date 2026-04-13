@@ -3,6 +3,7 @@ import { env } from '@config/env';
 
 export function createProjects(): PlaywrightTestConfig['projects'] {
   const isCI = Boolean(env.CI);
+  const visualProjectName = isCI ? 'visual-linux' : `visual-${process.platform}`;
 
   return [
     {
@@ -24,7 +25,7 @@ export function createProjects(): PlaywrightTestConfig['projects'] {
       },
     },
     {
-      name: 'visual',
+      name: visualProjectName,
       grep: /@visual/,
       retries: 0,
       fullyParallel: false,

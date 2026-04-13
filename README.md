@@ -53,6 +53,8 @@ This repository keeps:
 - `npm run test:e2e`
 - `npm run test:api`
 - `npm run test:visual`
+- `npm run test:visual:update` (refresh local visual baseline)
+- `npm run test:visual:docker` (run visual tests in Docker)
 - `npm run test:a11y`
 - `npm run test:ui`
 - `npm run report:quality`
