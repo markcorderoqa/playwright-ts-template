@@ -1,0 +1,56 @@
+{
+  "name": "playwright-ts-starter-template",
+  "version": "1.0.0",
+  "description": "Starter Playwright TypeScript automation framework template",
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:policy": "node scripts/lint-locator-policy.js",
+    "lint:all": "npm run lint && npm run lint:policy",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:smoke": "playwright test tests/smoke",
+    "test:e2e": "playwright test tests/e2e",
+    "test:api": "playwright test tests/api",
+    "test:visual": "playwright test tests/visual",
+    "test:a11y": "playwright test tests/a11y",
+    "test:reliability": "playwright test --repeat-each=2",
+    "test:shard:1": "playwright test --shard=1/2",
+    "test:shard:2": "playwright test --shard=2/2",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "report:quality": "node scripts/ci/quality-summary.js"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "automation",
+    "testing",
+    "qa"
+  ],
+  "author": "Your Name or Team",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
+    "@faker-js/faker": "^10.4.0",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.58.1",
+    "@typescript-eslint/parser": "^8.58.1",
+    "dotenv": "^17.4.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.5.0",
+    "prettier": "^3.8.2",
+    "typescript": "^5.9.3",
+    "zod": "^4.3.6"
+  }
+}
