@@ -57,8 +57,9 @@ async function waitForDefaultVisualReadiness(context: { page: Page; target: Loca
   const { page, target } = context;
   // Prevent CI flakiness by waiting for fonts and in-scope images to settle.
   await page.evaluate(async () => {
-    if ('fonts' in document) {
-      await document.fonts.ready;
+    const doc = globalThis.document;
+    if (doc?.fonts) {
+      await doc.fonts.ready;
     }
   });
   const elementHandle = await target.elementHandle();
