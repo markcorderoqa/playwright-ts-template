@@ -6,6 +6,7 @@ const isCI = Boolean(env.CI);
 
 export default defineConfig({
   testDir: './tests',
+  snapshotPathTemplate: 'tests/{testFilePath}-snapshots/{arg}-{projectName}{ext}',
   timeout: 45_000,
   expect: {
     timeout: 10_000,
