@@ -12,6 +12,7 @@ export default defineConfig({
     timeout: 10_000,
     toHaveScreenshot: {
       maxDiffPixelRatio: 0.02,
+      scale: 'css',
     },
   },
   fullyParallel: true,

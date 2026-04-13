@@ -31,6 +31,11 @@ export function createProjects(): PlaywrightTestConfig['projects'] {
       workers: 1,
       use: {
         ...devices['Desktop Chrome'],
+        viewport: { width: 1440, height: 900 },
+        deviceScaleFactor: 1,
+        colorScheme: 'light',
+        locale: 'en-US',
+        timezoneId: 'UTC',
       },
     },
     {
