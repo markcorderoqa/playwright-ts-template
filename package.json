@@ -13,6 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
+    "doctor": "npm ls playwright-core @playwright/test @axe-core/playwright",
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
@@ -25,6 +26,7 @@
     "test:shard:1": "playwright test --shard=1/2",
     "test:shard:2": "playwright test --shard=2/2",
     "test:ui": "playwright test --ui",
+    "test:docker": "docker run --rm -it -v ${PWD}:/work -w /work mcr.microsoft.com/playwright:v1.59.1-noble /bin/bash -lc \"npm ci && npx playwright test\"",
     "report": "playwright show-report",
     "report:quality": "node scripts/ci/quality-summary.js"
   },
@@ -41,7 +43,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.11.1",
     "@faker-js/faker": "^10.4.0",
-    "@playwright/test": "^1.58.2",
+    "@playwright/test": "^1.59.1",
     "@types/node": "^25.6.0",
     "@typescript-eslint/eslint-plugin": "^8.58.1",
     "@typescript-eslint/parser": "^8.58.1",
